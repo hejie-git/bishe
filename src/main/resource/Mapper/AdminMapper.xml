@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bishe.dao.AdminDao">
+
+    <insert id="addUser" parameterType="com.bishe.bean.UserPo">
+        INSERT INTO  tb_user(
+        username,
+        password,
+        flage
+        )
+        VALUES(#{username},#{password},#{flage}) ;
+    </insert>
+
+
+    <insert id="addTeacherInfo" parameterType="com.bishe.bean.TeacherPo">
+
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            select LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO tb_user (username,password,delete_flag,guardianPhone)
+        VALUES
+        (#{username}, #{password},#{deleteFlag},#{guardianPhone});
+    </insert>
+
+</mapper>

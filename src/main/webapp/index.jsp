@@ -35,9 +35,9 @@
         <img src="images/avtar.png" />
     </div>
     <form id="loginFrom" name="loginFrom" method="post">
-        <input type="text" class="text" value="请输入学号/工号" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'username';}" >
+        <input type="text" class="text" value="请输入学号/工号" onfocus="this.value = '';" onblur="User()"><span class="verifyUser" style="opacity: 0"></span>
         <div class="key">
-            <input type="password" class = "text" value="请输入密码" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}">
+            <input type="password" value="请输入密码" onfocus="this.value = '';" onblur="Password()"><span class="verifyPass" style="opacity: 0"></span>
         </div>
     </form>
     <div class="signin">
